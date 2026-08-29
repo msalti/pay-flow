@@ -72,6 +72,7 @@ export function LineRow({
   }
 
   function onDragStart(event: DragEvent<HTMLTableRowElement>) {
+    event.dataTransfer.setData('text/plain', line.id)
     event.dataTransfer.setData('text/paygrid-line', line.id)
     event.dataTransfer.effectAllowed = 'move'
   }
